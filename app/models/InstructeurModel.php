@@ -27,10 +27,13 @@ class InstructeurModel
     public function getLeerlingen($Id = null)
     {
         $sql = "SELECT
-            voer.Type
-            ,voer.Kenteken
-            ,voer.Bouwjaar
-            ,voer.Brandstof
+            Leerl.Voornaam Leerl.TussenVoegsel Leerl.Achternaam
+            ,Leerl.Mobiel
+            ,LP.PakketNaam
+            ,LP.AantalLessen
+            ,LP.Prijs
+            ,LPLP.StartDatumRijlessen
+            ,LPLP.DatumRijbewijsBehaald
             ,LPLP.TypeVoertuig
             ,LPLP.Rijbewijscategorie
             from LesPakket as LP
