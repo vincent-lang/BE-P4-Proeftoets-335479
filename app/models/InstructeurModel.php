@@ -31,21 +31,18 @@ class InstructeurModel
             ,voer.Kenteken
             ,voer.Bouwjaar
             ,voer.Brandstof
-            ,typevoer.TypeVoertuig
-            ,typevoer.Rijbewijscategorie
-            from Instructeur as instruct
+            ,LPLP.TypeVoertuig
+            ,LPLP.Rijbewijscategorie
+            from LesPakket as LP
 
-            inner join VoertuigInstructeur as voerinstruc
-            on instruct.Id = voerinstruc.InstructeurId
+            inner join Leerling as Leerl
+            on LP.Id = Leerl.Id
+
+            inner join LeerlingPerLesPakket as LPLP
+            on Leerl.Id = LPLP.Id
             
-            inner join Voertuig as voer
-            on voerinstruc.VoertuigId = voer.Id
-            
-            inner join TypeVoertuig as typevoer
-            on voer.TypeVoertuigId = typevoer.Id
-            
-            where instruct.Id = $Id
-            order by typevoer.Rijbewijscategorie asc";
+            where LP.Id = $Id
+            order by LPLP.StartDatumRijlessen asc";
 
         $this->db->query($sql);
         return $this->db->resultSet();
