@@ -19,11 +19,11 @@ class RijLesPakketten extends BaseController
             $rows .= "<tr>
                         <td>$result->Naam</td>
                         <td>$result->Mobiel</td>
-                        <td>$result->Pakket naam</td>
-                        <td>$result->Aantal Lessen</td>
+                        <td>$result->PakketNaam</td>
+                        <td>$result->AantalLessen</td>
                         <td>$result->Prijs</td>
-                        <td>$result->Start datum</td>
-                        <td>$result->Datum Rijbewijs behaald</td>
+                        <td>$result->StartDatumRijlessen</td>
+                        <td>$result->DatumRijbewijsBehaald</td>
                     </tr>";
         }
 

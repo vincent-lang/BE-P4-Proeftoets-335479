@@ -9,7 +9,6 @@
 </head>
 <body>
     <h3><?= $data['title']; ?></h3>
-    <h3><?= $data['aantal_instructeurs']; ?></h3>
     <table>
         <thead>
             <th>Voornaam</th>

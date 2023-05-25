@@ -12,7 +12,7 @@ class LeerlingModel
     public function getLeerlingen($Id = null)
     {
         $sql = "SELECT
-            Leerl.Voornaam Leerl.TussenVoegsel Leerl.Achternaam
+            Leerl.Voornaam Leerl.TussenVoegsel Leerl.Achternaam as Naam
             ,Leerl.Mobiel
             ,LP.PakketNaam
             ,LP.AantalLessen
