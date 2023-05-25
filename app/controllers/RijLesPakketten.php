@@ -1,21 +1,21 @@
 <?php
 
-class Instructeur extends BaseController
+class RijLesPakketten extends BaseController
 {
 
-    private $instructeurInfo;
+    private $RijLesPakkettenInfo;
 
     public function __construct()
     {
-        $this->instructeurInfo = $this->model('InstructeurModel');
+        $this->RijLesPakkettenInfo = $this->model('InstructeurModel');
     }
 
     public function index()
     {
-        $Instructeurs = $this->instructeurInfo->getInstructeurs();
+        $Leerlingen = $this->RijLesPakkettenInfo->getLeerlingen();
 
         $rows = '';
-        foreach ($Instructeurs as $result) {
+        foreach ($Leerlingen as $result) {
             $rows .= "<tr>
                         <td>$result->Voornaam</td>
                         <td>$result->Tussenvoegsel</td>
