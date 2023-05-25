@@ -17,7 +17,7 @@ class Leerling extends BaseController
         $rows = '';
         foreach ($Leerlingen as $result) {
             $rows .= "<tr>
-                        <td>$result->Naam</td>
+                        <td>$result->Voornaam</td>
                         <td>$result->Mobiel</td>
                         <td>$result->PakketNaam</td>
                         <td>$result->AantalLessen</td>

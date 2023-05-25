@@ -9,27 +9,24 @@ class LeerlingModel
         $this->db = new Database();
     }
 
-    public function getLeerlingen($Id = null)
+    public function getLeerlingen()
     {
         $sql = "SELECT
-            Leerl.Voornaam Leerl.TussenVoegsel Leerl.Achternaam as Naam
-            ,Leerl.Mobiel
-            ,LP.PakketNaam
-            ,LP.AantalLessen
-            ,LP.Prijs
-            ,LPLP.StartDatumRijlessen
-            ,LPLP.DatumRijbewijsBehaald
-            ,LPLP.TypeVoertuig
-            ,LPLP.Rijbewijscategorie
-            from LesPakket as LP
-
-            inner join Leerling as Leerl
-            on LP.Id = Leerl.Id
-
-            inner join LeerlingPerLesPakket as LPLP
-            on Leerl.Id = LPLP.Id
+            Voornaam
+            ,Mobiel
+            ,PakketNaam
+            ,AantalLessen
+            ,Prijs
+            ,StartDatumRijlessen
+            ,DatumRijbewijsBehaald
+            from Leerling as Leerl
             
-            where LP.Id = $Id
+            inner join LeerlingPerLesPakket as LPLP
+            on LPLP.LeerlingId = Leerl.Id
+
+            inner join LesPakket as LP
+            on LPLP.LesPakketId = LP.Id
+            group by Voornaam
             order by LPLP.StartDatumRijlessen asc";
 
         $this->db->query($sql);
