@@ -7,7 +7,7 @@ class RijLesPakketten extends BaseController
 
     public function __construct()
     {
-        $this->RijLesPakkettenInfo = $this->model('InstructeurModel');
+        $this->RijLesPakkettenInfo = $this->model('LeerlingModel.php');
     }
 
     public function index()
