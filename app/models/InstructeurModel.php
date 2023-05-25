@@ -24,7 +24,7 @@ class InstructeurModel
         return $this->db->resultSet();
     }
 
-    public function getVoertuigen($Id = null)
+    public function getLeerlingen($Id = null)
     {
         $sql = "SELECT
             voer.Type
@@ -49,14 +49,5 @@ class InstructeurModel
 
         $this->db->query($sql);
         return $this->db->resultSet();
-    }
-
-    public function getInstructeurById($Id)
-    {
-        $sql = "SELECT * FROM Instructeur WHERE Id = $Id";
-
-        $this->db->query($sql);
-        return $this->db->resultSet();
-
     }
 }
