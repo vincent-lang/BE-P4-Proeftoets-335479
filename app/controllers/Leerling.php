@@ -1,13 +1,13 @@
 <?php
 
-class RijLesPakketten extends BaseController
+class Leerling extends BaseController
 {
 
     private $RijLesPakkettenInfo;
 
     public function __construct()
     {
-        $this->RijLesPakkettenInfo = $this->model('LeerlingModel.php');
+        $this->RijLesPakkettenInfo = $this->model('LeerlingModel');
     }
 
     public function index()
