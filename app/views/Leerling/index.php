@@ -11,13 +11,13 @@
     <h3><?= $data['title']; ?></h3>
     <table>
         <thead>
-            <th>Voornaam</th>
-            <th>Tussenvoegsel</th>
-            <th>Achternaam</th>
+            <th>Naam</th>
             <th>Mobiel</th>
-            <th>Datum in dienst</th>
-            <th>Aantal sterren</th>
-            <th>Voertuigen</th>
+            <th>Pakket Naam</th>
+            <th>Aantal Lessen</th>
+            <th>Prijs</th>
+            <th>Start Datum</th>
+            <th>Datum Rijbewijs Behaald</th>
         </thead>
         <tbody>
             <?= $data['rows'];  ?>

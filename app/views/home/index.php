@@ -10,7 +10,7 @@
 
 <body>
     <h3><?= $data['title']; ?></h3>
-    <a href="<?= URLROOT; ?>/instructeur/index">Overzicht Rijlespakketten Leerlingen</a>
+    <a href="<?= URLROOT; ?>/Leerling/index">Overzicht Rijlespakketten Leerlingen</a>
 </body>
 
 </html>
