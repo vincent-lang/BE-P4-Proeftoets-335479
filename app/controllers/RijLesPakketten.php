@@ -17,27 +17,21 @@ class RijLesPakketten extends BaseController
         $rows = '';
         foreach ($Leerlingen as $result) {
             $rows .= "<tr>
-                        <td>$result->Voornaam</td>
-                        <td>$result->Tussenvoegsel</td>
-                        <td>$result->Achternaam</td>
+                        <td>$result->Naam</td>
                         <td>$result->Mobiel</td>
-                        <td>$result->DatumInDienst</td>
-                        <td>$result->AantalSterren</td>
-                        <td>
-                        <a href='". URLROOT . "/voertuig/index/" . $result->Id . "'>
-                        <img src='". URLROOT . "/img/car.png' alt='car.png'>
-                        </a>
-                        </td>
+                        <td>$result->Pakket naam</td>
+                        <td>$result->Aantal Lessen</td>
+                        <td>$result->Prijs</td>
+                        <td>$result->Start datum</td>
+                        <td>$result->Datum Rijbewijs behaald</td>
                     </tr>";
         }
 
         $data = [
-            'title' => 'Instructeurs in dienst',
-            'aantal_instructeurs' => 'Aantal instructeurs: 5',
-            'records' => 'info uit de database',
+            'title' => 'Overzicht Rijlespakketten Leerlingen',
             'rows' => $rows
         ];
 
-        $this->view('instructeur/index', $data);
+        $this->view('Leerling/index', $data);
     }
 }
