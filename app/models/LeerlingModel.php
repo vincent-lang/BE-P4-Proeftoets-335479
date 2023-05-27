@@ -26,6 +26,7 @@ class LeerlingModel
 
             inner join LesPakket as LP
             on LPLP.LesPakketId = LP.Id
+            
             group by Voornaam
             order by LPLP.StartDatumRijlessen asc";
 
